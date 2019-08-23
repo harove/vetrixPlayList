@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Heroe;
+use App\Playlist;
+
 
 class HeroeController extends Controller
 {
     public function index(){
-        
+   
         $heroes = Heroe::all();
-        return view('pages-blank',['heroes' => $heroes]);
+        $playlists = Playlist::all();
+        return view('pages-blank',['heroes' => $heroes],['playlists' => $playlists]);
     }
 
     public function create(){

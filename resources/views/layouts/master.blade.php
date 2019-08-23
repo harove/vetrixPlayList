@@ -25,20 +25,32 @@
         @include('layouts.footer-script')  
     </div> 
 
+
+
     <script>
-            $(document).ready(function() {
-                $("#lista1").sortable({
-                    connectWith : ['#lista2'],
-                  update : function(event, ui) {
-                     $('#resultado').append(ui.item.parent().attr('id')+"<br/>");
-                     $('#resultado').append(ui.item.parent().sortable('toArray')+"<br/>");
-                  }});
+        $(document).ready(function() {
 
-                $("#lista2").sortable({connectWith : ['#lista1']});
+            // $("#lista1").sortable({
+            //     connectWith : ['#lista2'],
+            //   update : function(event, ui) {
+            //      $('#resultado').append(ui.item.parent().attr('id')+"<br/>");
+            //      $('#resultado').append(ui.item.parent().sortable('toArray')+"<br/>");
+            //   }});
+
+            // $("#lista2").sortable({connectWith : ['#lista1']});
 
 
 
+            $("#addrow").click(function(){
+                console.log("hola");
+                $("#lista2").append("<tr><td>Table data</td><td>Table data</td></tr>");
             });   
+        });
     </script>
+    
+
+
+
+
 </body>
 </html>
