@@ -189,21 +189,21 @@
                     <!-- Start content -->
                     <div class="content">
                         <div class="container-fluid">
-                                <div class="page-title-box">
-                                        <div class="row align-items-center">
-                                            
-                                            <div class="col-sm-6">
-                                                <h4 class="page-title">Crear Programación</h4>
-                                                <ol class="breadcrumb">
-                                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
-                                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Tables</a></li>
-                                                    <li class="breadcrumb-item active">Responsive Table</li>
-                                                </ol>
-            
-                                            </div>
-                                            
-                                        </div>
+                              <div class="page-title-box">
+                                    <div class="row align-items-center">
+                                       
+                                       <div class="col-sm-6">
+                                          <h4 class="page-title">Crear Programación</h4>
+                                          <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
+                                                <li class="breadcrumb-item"><a href="javascript:void(0);">Tables</a></li>
+                                                <li class="breadcrumb-item active">Responsive Table</li>
+                                          </ol>
+      
+                                       </div>
+                                       
                                     </div>
+                              </div>
                             
                             <!-- end row -->
 
@@ -287,57 +287,53 @@
                                                          </div>
                                                       </div>
                                                                 
-                                                                    <div class="form-group row col-sm-12">
-                                                                        <label for="example-time-input" class=" col-form-label">Loop</label>
-                                                                       
-                                                                        <input type="checkbox" id="switch7" switch="info" checked/>
-                                                                        <label class="loop" for="switch7" data-on-label="Si"
-                                                                                data-off-label="No"></label>
+                                                      <div class="form-group row col-sm-12">
+                                                         <label for="example-time-input" class=" col-form-label">Loop</label>
+                                                         
+                                                         <input type="checkbox" id="switch7" switch="info" checked/>
+                                                         <label class="loop" for="switch7" data-on-label="Si" data-off-label="No">
+                                                         </label>
 
-                                                                                <label for="example-time-input" class=" col-form-label">AutoStart</label>
-                                                                       
-                                                                                <input type="checkbox" id="switch8" switch="info" checked/>
-                                                                                <label class="loop" for="switch8" data-on-label="Si"
-                                                                                        data-off-label="No"></label>
-                                                                       
-                                                                       
-                                                                        <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
-                                                                                Crear
-                                                                            </button>
-                                                                        
-                                                                </div>
-                                                                
-                                                        </form>
-                                                        
-                                                                    <table class="table table-sm m-10 ">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th>Video</th>
-                                                                                <th>Length</th>
-                                                                                <th>Action</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody id="lista2" class="text-dark">
-                                                                            @foreach( $playlists as $playlist )
-                                                                            <tr class="table-primary">
-                                                                              <th scope="row">{{ $heroe->id}}</th>
-                                                                              <td>{{ $playlist->name }}</td>
-                                                                              <td>
-                                                                              <a href="" class="btn btn-warning">Editar</a>
-                                                                              <a href="" class="btn btn-primary">Borrar</a>
-                                                                              </td>
-                                                                            </tr>
-                                                                          @endforeach
-                                                                        </tbody>
-                                                                    </table>
+                                                         <label for="example-time-input" class=" col-form-label">AutoStart</label>
+                                                
+                                                         <input type="checkbox" id="switch8" switch="info" checked/>
+                                                         <label class="loop" for="switch8" data-on-label="Si"
+                                                                  data-off-label="No">
+                                                         </label>
+                                                         <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                            Crear
+                                                         </button>
+                                                      </div> 
+                                                </form>
 
+                                                            <table class="table table-sm m-10 ">
+                                                               <thead>
+                                                                  <tr>
+                                                                     <th>Video</th>
+                                                                     <th>Length</th>
+                                                                     <th>Action</th>
+                                                                  </tr>
+                                                               </thead>
+                                                               <tbody id="lista2" class="text-dark">
+                                                                  @foreach( $playlists as $playlist )
+                                                                     <tr class="table-primary">
+                                                                        <th scope="row">{{ $heroe->id}}</th>
+                                                                        <td>{{ $playlist->name }}</td>
+                                                                        <td>
+                                                                        <a href="" class="btn btn-warning">Editar</a>
+                                                                        <a href="" class="btn btn-primary">Borrar</a>
+                                                                        </td>
+                                                                     </tr>
+                                                                  @endforeach
+                                                               </tbody>
+                                                            </table>
 
-                                                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
-                                                                            Guardar Lista
-                                                                        </button>   
-                                                                        <button type="submit" class="btn btn-dark waves-effect waves-light mr-1">
-                                                                                <i class="ti-control-play"></i> Preview
-                                                                            </button>      
+                                                               <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                                                        Guardar Lista
+                                                               </button>   
+                                                               <button type="submit" class="btn btn-dark waves-effect waves-light mr-1">
+                                                                        <i class="ti-control-play"></i> Preview
+                                                               </button>      
                                                 
                                                 </div>
 
