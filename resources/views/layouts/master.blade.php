@@ -43,8 +43,13 @@
 
             $("#addrow").click(function(){
                 console.log("hola");
-                $("#lista2").append("<tr><td>Table data</td><td>Table data</td></tr>");
+                $("#lista2").append("hola");
             });   
+
+           
+
+
+
         });
     </script>
     

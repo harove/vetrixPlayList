@@ -4,7 +4,14 @@
 $(document).ready(function() {
 
     $("#addrow").click(function(){
-        $("#lista2").append("<tr><td>Table data</td><td>Table data</td></tr>");
+        $row = $('#addrow').parent().parent()
+
+
+        $("#lista2").append($row.clone());
+
+    
+        
+
     });   
 });
 
