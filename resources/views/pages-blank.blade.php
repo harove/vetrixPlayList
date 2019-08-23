@@ -208,99 +208,84 @@
                             <!-- end row -->
 
                             <div class="row">
-                                    <div class="col-lg-4">
-                                            <div class="card">
-                                                    <div class="card-body">
-                                                            <div class="btn-group" role="group">
-                                                                    <button id="btnGroupVerticalDrop1" type="button" class="btn btn-primary dropdown-toggle elegir" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                      Categorias
-                                                                    </button>
-                                                                    <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
-                                                                        <a class="dropdown-item" href="#">Dropdown link</a>
-                                                                        <a class="dropdown-item" href="#">Dropdown link</a>
-                                                                    </div>        
-                                                            </div>
-
-
-
-                                                                <div class="table-responsive">
-                                                                    <div class="col-xs-6">
-                                                                        <table id= "table1" class="table mb-0">
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th>#</th>
-                                                                                    <th>Video</th>
-                                                                                    <th>Length</th>
-                                                                                    <th>Username</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody id="lista1">
-                                                                                    @foreach( $heroes as $heroe )
-                                                                                    <tr>
-                                                                                    <th scope="row">{{ $heroe->id}}</th>
-                                                                                    <td>{{ $heroe->name }}</td>
-                                                                                    <td>{{ $heroe->hp }}</td>
-                                                            
-                                                                                    <td>
-                                                                                        <button id="addrow">New row</button>
-                                                                        
-                                                                                    </td>
-                                                                                    </tr>
-                                                                                @endforeach
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>         
-
-
-
-
-                                                               
-        
-
-
-                                                    </div>
-    
-                                                            
-                                           </div> 
-                                    </div> 
+                              <div class="col-lg-4">
+                                 <div class="card">
+                                    <div class="card-body">
+                                       <div class="btn-group" role="group">
+                                          <button id="btnGroupVerticalDrop1" type="button" class="btn btn-primary dropdown-toggle elegir" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             Categorias
+                                          </button>
+                                          <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                             <a class="dropdown-item" href="#">Dropdown link</a>
+                                             <a class="dropdown-item" href="#">Dropdown link</a>
+                                          </div>        
+                                       </div>
+                                       <div class="table-responsive">
+                                          <div class="col-xs-6">
+                                             <table id= "table1" class="table mb-0">
+                                                <thead>
+                                                   <tr>
+                                                      <th>#</th>
+                                                      <th>Video</th>
+                                                      <th>Length</th>
+                                                      <th>Username</th>
+                                                   </tr>
+                                                </thead>
+                                                <tbody id="lista1">
+                                                   @foreach( $heroes as $heroe )
+                                                   <tr>
+                                                      <th scope="row">{{ $heroe->id}}</th>
+                                                      <td>{{ $heroe->name }}</td>
+                                                      <td>{{ $heroe->hp }}</td>
+                                                      <td>
+                                                            <button id="addrow">New row</button>
+                                                      </td>
+                                                   </tr>
+                                                   @endforeach
+                                                </tbody>
+                                             </table>
+                                          </div>
+                                       </div>         
+                                    </div>                                                        
+                                 </div> 
+                              </div> 
                                
                                     <div class="col-lg-8">
                                             <div class="card">
                                                 <div class="card-body">
-                                                        <form class="" action="#">
+                                                   <form class="" action="#">
 
-                                                                <div class="form-group row ">
-                                                                        <label for="example-text-input" class="col-sm-2 col-form-label">Nombre</label>
-                                                                        <div class="col-sm-10">
-                                                                            <input class="form-control" type="text" value="" placeholder="Nombre Lista de Reproducción" id="example-text-input">
-                                                                        </div>
-                                                                    </div>
+                                                      <div class="form-group row ">
+                                                         <label for="example-text-input" class="col-sm-2 col-form-label">Nombre</label>
+                                                         <div class="col-sm-10">
+                                                               <input class="form-control" type="text" value="" placeholder="Nombre Lista de Reproducción" id="example-text-input">
+                                                         </div>
+                                                      </div>
 
-                                                                    <div class="form-group row">
-                                                                            <label for="example-text-input" class="col-sm-2 col-form-label">Canal</label>
-                                                                            <div class="col-sm-10">
-                                                                                    <select class="form-control">
-                                                                                            <option>Seleccionar Canal</option>
-                                                                                            <option>Large select</option>
-                                                                                            <option>Small select</option>
-                                                                                        </select>
-                                                                            </div>
-                                                                    </div>
+                                                      <div class="form-group row">
+                                                         <label for="example-text-input" class="col-sm-2 col-form-label">Canal</label>
+                                                         <div class="col-sm-10">
+                                                            <select class="form-control">
+                                                                     <option>Seleccionar Canal</option>
+                                                                     <option>Large select</option>
+                                                                     <option>Small select</option>
+                                                            </select>
+                                                         </div>
+                                                      </div>
 
-                                                                    <div class="form-group row">
-                                                                            <label for="example-time-input" class="col-sm-2 col-form-label">Hora Inicio</label>
-                                                                            <div class="col-sm-10">
-                                                                                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                                                                            </div>
-                                                                        </div>
+                                                      <div class="form-group row">
+                                                         <label for="example-time-input" class="col-sm-2 col-form-label">Hora Inicio</label>
+                                                         <div class="col-sm-10">
+                                                            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
+                                                         </div>
+                                                      </div>
 
-                                                                        <div class="form-group row">
-                                                                                <label for="example-date-input" class="col-sm-2 col-form-label">Emisión</label>
-                                                                                <div class="col-sm-10">
-                                                                                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                                                                                </div>
-                                                                            </div>
+                                                      <div class="form-group row">
+                                                         <label for="example-date-input" class="col-sm-2 col-form-label">Emisión</label>
+                                                         <div class="col-sm-10">
+                                                            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                                                         </div>
+                                                      </div>
                                                                 
                                                                     <div class="form-group row col-sm-12">
                                                                         <label for="example-time-input" class=" col-form-label">Loop</label>
@@ -330,13 +315,9 @@
                                                                                 <th>Video</th>
                                                                                 <th>Length</th>
                                                                                 <th>Action</th>
-                                                                         
-                
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody id="lista2" class="text-dark">
-                                                            
-                                                                      
                                                                             @foreach( $playlists as $playlist )
                                                                             <tr class="table-primary">
                                                                               <th scope="row">{{ $heroe->id}}</th>
@@ -345,20 +326,12 @@
                                                                               <a href="" class="btn btn-warning">Editar</a>
                                                                               <a href="" class="btn btn-primary">Borrar</a>
                                                                               </td>
-                                                                       
                                                                             </tr>
                                                                           @endforeach
-
-
-
-
-                                 
-    
                                                                         </tbody>
                                                                     </table>
 
 
-                        
                                                                     <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
                                                                             Guardar Lista
                                                                         </button>   
