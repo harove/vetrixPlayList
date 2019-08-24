@@ -253,12 +253,12 @@
                                     <div class="col-lg-8">
                                             <div class="card">
                                                 <div class="card-body">
-                                                   <form class="" action="#">
-
+                                                   <form class="" action="/persistPlaylist" method="POST">
+                                                      @csrf
                                                       <div class="form-group row ">
                                                          <label for="example-text-input" class="col-sm-2 col-form-label">Nombre</label>
                                                          <div class="col-sm-10">
-                                                               <input class="form-control" type="text" value="" placeholder="Nombre Lista de Reproducción" id="example-text-input">
+                                                               <input class="form-control" type="text" name="name" value="" placeholder="Nombre Lista de Reproducción" id="example-text-input">
                                                          </div>
                                                       </div>
 
