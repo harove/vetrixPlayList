@@ -38,10 +38,7 @@ class PlaylistController extends Controller
     
         $playlist = new Playlist;
         $playlist->name = $request->input('name');
-        dd($playlist);
         $playlist->save();
-     
-
         return redirect()->route('pages-blank');
     
     }

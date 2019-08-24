@@ -238,7 +238,7 @@
                                                       <td>{{ $heroe->name }}</td>
                                                       <td>{{ $heroe->hp }}</td>
                                                       <td>
-                                                            <button id="addrow">New row</button>
+                                                            <button id="video_{{ $heroe->id }}" class="addrow">New row</button>
                                                       </td>
                                                    </tr>
                                                    @endforeach
