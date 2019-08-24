@@ -225,16 +225,16 @@
                                              <table id= "table1" class="table mb-0">
                                                 <thead>
                                                    <tr>
-                                                      <th>#</th>
+                                                
                                                       <th>Video</th>
                                                       <th>Length</th>
-                                                      <th>Username</th>
+                                                      <th>Add to playlist</th>
                                                    </tr>
                                                 </thead>
                                                 <tbody id="lista1">
                                                    @foreach( $heroes as $heroe )
                                                    <tr>
-                                                      <th scope="row">{{ $heroe->id}}</th>
+                                                  
                                                       <td>{{ $heroe->name }}</td>
                                                       <td>{{ $heroe->hp }}</td>
                                                       <td>
@@ -320,7 +320,6 @@
                                                                         <th scope="row">{{ $heroe->id}}</th>
                                                                         <td>{{ $playlist->name }}</td>
                                                                         <td>
-                                                                        <a href="" class="btn btn-warning">Editar</a>
                                                                         <a href="" class="btn btn-primary">Borrar</a>
                                                                         </td>
                                                                      </tr>
@@ -366,6 +365,11 @@
  <script src="assets/js/bootstrap.bundle.min.js"></script>
  <script src="assets/js/metisMenu.min.js"></script>
  <script src="assets/js/jquery.slimscroll.js"></script>
+ <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous">
+  </script>
  <script src="assets/js/waves.min.js"></script>
  <script src="assets/js/custom1.js" </script>
 
