@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
         <title>Director Cloud - Cloud TV Playout</title>
         <meta content="Admin Dashboard" name="description" />
-        <meta content="Themesbrand" name="author" />
+		  <meta content="Themesbrand" name="author" />
+		  <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -236,7 +237,7 @@
                                                    <tr>
                                                   
                                                       <td>{{ $heroe->name }}</td>
-                                                      <td>{{ $heroe->hp }}</td>
+                                                      <td>{{ $heroe->length }}</td>
                                                       <td>
                                                             <button id="video_{{ $heroe->id }}" class="addrow">New row</button>
                                                       </td>
@@ -306,10 +307,10 @@
                                                       </div> 
                                                 </form>
 
-                                                            <table class="table table-sm m-10 ">
+                                                            <table id="tableplay" class="table table-sm m-10 ">
                                                                <thead>
                                                                   <tr>
-                                                                     <th>Video</th>
+                                                                     <th>name</th>
                                                                      <th>Length</th>
                                                                      <th>Action</th>
                                                                   </tr>
@@ -330,7 +331,7 @@
                                                                <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
                                                                         Guardar Lista
                                                                </button>   
-                                                               <button type="submit" class="btn btn-dark waves-effect waves-light mr-1">
+                                                               <button id="saveplaylist" type="submit" class="btn btn-dark waves-effect waves-light mr-1">
                                                                         <i class="ti-control-play"></i> Preview
                                                                </button>      
                                                 
@@ -371,8 +372,8 @@
   crossorigin="anonymous">
   </script>
  <script src="assets/js/waves.min.js"></script>
- <script src="assets/js/custom1.js" </script>
-
+ <script src="assets/js/custom1.js"> </script>
+ <script src="assets/js/jquery.tabletojson.js"> </script>
 
  <!-- App js -->
  <script src="assets/js/app.js"></script>

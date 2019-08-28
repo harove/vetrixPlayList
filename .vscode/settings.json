@@ -1,3 +1,4 @@
 {
-    "workbench.colorTheme": "Solarized Light"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "blade.format.enable": true
 }
