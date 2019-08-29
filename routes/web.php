@@ -14,7 +14,13 @@
 Route::get('pages-blank','HeroeController@index')->name('pages-blank');
 
 
+Route::resource('playlist', 'PlaylistController')->except([
+    'store'
+]);
+
+
 Route::post('persistPlaylist','PlaylistController@store')->name('persistPlaylist');
+
 
 
 

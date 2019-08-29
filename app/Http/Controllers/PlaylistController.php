@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Playlist;
 use Illuminate\Http\Request;
+
 class PlaylistController extends Controller
 {
     /**
@@ -54,23 +55,21 @@ class PlaylistController extends Controller
             // ]); 
 
                 
-            
+            //    $request->json()->all()
 
-                // return response()->json(
-                // //     //"message ok" => $request->json()->all()
-                // //     //"message okp" => json_encode($request->json()->all(),JSON_UNESCAPED_SLASHES)
-                // //     //"message okp" => $postbody[0]
-                // //     //json_decode($request->getContent(), true)
-                // $request->json()->all()
-                    
-                // ); 
-
-                $videosArray= $request->json()->all();
+            // return response()->json(
+            //     $videosArray
                 
-                $playlist = new Playlist;  
+            // ); 
+
+          
+                $videosArray= $request->json()->all();
+         
 
                 foreach ($videosArray as $video){
+                    $playlist = new Playlist;  
                     $playlist->name = $video['name'];
+                    $playlist->length = $video['length'];
                     $playlist->save(); 
                 }
 
@@ -153,8 +152,31 @@ class PlaylistController extends Controller
      * @param  \App\Playlist  $playlist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Playlist $playlist)
+    public function destroy($id)
     {
-        //
+
+
+
+
+
+        $playlist = Playlist::find($id);
+
+        $playlist->delete($id);
+
+
+          //    $request->json()->all()
+
+            // return response()->json(
+            //      $id
+                
+            // ); 
+
+
+
+
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
     }
 }

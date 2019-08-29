@@ -10,6 +10,40 @@ $(document).ready(function() {
         $("#lista2").append($rowClone);
     });  
     
+    $(".deleteRow").click(function(e){
+        e.preventDefault();
+        
+        playlist_id = $(this).parent().parent().attr('id');
+        console.log($(this).parent().parent().attr('id'));  //id to delete through ajax
+        $(this).parent().parent().remove();
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/playlist/'+playlist_id+'/',
+            type: 'DELETE',
+            data: {'id': playlist_id},
+            success: function(){ 
+                console.log('success'); 
+            },
+            error: function(data) {
+                console.log(data)
+            }
+        });
+
+
+
+    });
+
+
+
+
+
     $("#saveplaylist").click(function(e){
         e.preventDefault();
         var table = $('#tableplay').tableToJSON();

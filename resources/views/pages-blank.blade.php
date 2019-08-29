@@ -206,6 +206,8 @@
                                     </div>
                               </div>
                             
+                            {{--dd($heroes->toArray())--}}  
+
                             <!-- end row -->
 
                             <div class="row">
@@ -227,8 +229,8 @@
                                                 <thead>
                                                    <tr>
                                                 
-                                                      <th>Video</th>
-                                                      <th>Length</th>
+                                                      <th>name</th>
+                                                      <th>length</th>
                                                       <th>Add to playlist</th>
                                                    </tr>
                                                 </thead>
@@ -317,11 +319,11 @@
                                                                </thead>
                                                                <tbody id="lista2" class="text-dark">
                                                                   @foreach( $playlists as $playlist )
-                                                                     <tr class="table-primary">
-                                                                        <th scope="row">{{ $heroe->name}}</th>
+                                                                    <tr id="{{ $playlist->id }}" class="table-primary">
+                                                                        <th scope="row">{{ $playlist->name}}</th>
                                                                         <td>{{ $playlist->length }}</td>
-                                                                        <td>
-                                                                        <a href="" class="btn btn-primary">Borrar</a>
+                                                                        <td class="">
+                                                                        <a href="" class="btn btn-primary deleteRow">Borrar</a>
                                                                         </td>
                                                                      </tr>
                                                                   @endforeach
