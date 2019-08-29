@@ -311,15 +311,15 @@
                                                                <thead>
                                                                   <tr>
                                                                      <th>name</th>
-                                                                     <th>Length</th>
-                                                                     <th>Action</th>
+                                                                     <th>length</th>
+                                                                     <th>action</th>
                                                                   </tr>
                                                                </thead>
                                                                <tbody id="lista2" class="text-dark">
                                                                   @foreach( $playlists as $playlist )
                                                                      <tr class="table-primary">
-                                                                        <th scope="row">{{ $heroe->id}}</th>
-                                                                        <td>{{ $playlist->name }}</td>
+                                                                        <th scope="row">{{ $heroe->name}}</th>
+                                                                        <td>{{ $playlist->length }}</td>
                                                                         <td>
                                                                         <a href="" class="btn btn-primary">Borrar</a>
                                                                         </td>
