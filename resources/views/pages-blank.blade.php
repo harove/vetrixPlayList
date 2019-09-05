@@ -144,7 +144,7 @@
                             </li>
 
                             <li>
-                                <a href="calendar.html" class="waves-effect"><i class="ti-cloud-up "></i><span> Subir Vídeos </span></a>
+                            <a href="{{ route('upload-video') }}" class="waves-effect"><i class="ti-cloud-up "></i><span> Subir Vídeos </span></a>
                             </li>
 
                             <li>
@@ -314,6 +314,8 @@
                                                                   <tr>
                                                                      <th>name</th>
                                                                      <th>length</th>
+                                                                     <th>start</th>
+                                                                     <th>end</th>
                                                                      <th>action</th>
                                                                   </tr>
                                                                </thead>
@@ -322,6 +324,8 @@
                                                                     <tr id="{{ $playlist->id }}" class="table-primary">
                                                                         <th scope="row">{{ $playlist->name}}</th>
                                                                         <td>{{ $playlist->length }}</td>
+                                                                        <td>{{ $playlist->start }}</td>
+                                                                        <td>{{ $playlist->end }}</td>
                                                                         <td class="">
                                                                         <a href="" class="btn btn-primary deleteRow">Borrar</a>
                                                                         </td>

@@ -16,6 +16,16 @@ class HeroeController extends Controller
         return view('pages-blank',['heroes' => $heroes],['playlists' => $playlists]);
     }
 
+
+    
+
+
+    public function uploadVideo(){
+
+        return view('upload-video');
+    }
+
+
     public function create(){
         return view('admin.heroes.create');
     }
