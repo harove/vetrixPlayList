@@ -13,6 +13,7 @@
 
 Route::get('pages-blank','HeroeController@index')->name('pages-blank');
 Route::get('upload-video','HeroeController@uploadVideo')->name('upload-video');
+Route::post('uploadFiles','HeroeController@uploadFiles')->name('upload-files');
 
 Route::resource('playlist', 'PlaylistController')->except([
     'store'

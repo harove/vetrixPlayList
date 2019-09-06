@@ -2,28 +2,72 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Heroe;
 use App\Playlist;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
+
+
+
 
 
 class HeroeController extends Controller
 {
     public function index(){
-   
         $heroes = Heroe::all();
         $playlists = Playlist::all();
         return view('pages-blank',['heroes' => $heroes],['playlists' => $playlists]);
     }
 
 
+    public function uploadVideo(){
+
+        return view('imageupload');
+    }
+
+
+
+
+    public function uploadFiles() {
+
+        //dd('hola');
+        $input = Input::all();
+
+        //var_dump($input);
+
+        // 'file' => 'image|max:500000',
+
+        $rules = array(
+            'file' => 'mimes:mp4|max:10000'
+        );
+   
+
+        $validation = Validator::make($input, $rules);
+ 
+        if ($validation->fails()) {
+            return Response::make($validation->errors()->first(), 400);
+        }
+ 
+        $destinationPath = 'uploads'; // upload path
+        $extension = Input::file('file')->getClientOriginalExtension(); // getting file extension
+        $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
+        $upload_success = Input::file('file')->move($destinationPath, $fileName); // uploading file to given path
+ 
+        if ($upload_success) {
+            return Response::json('success', 200);
+        } else {
+            return Response::json('error', 400);
+        }
+    }
+
+
+
     
 
 
-    public function uploadVideo(){
 
-        return view('upload-video');
-    }
 
 
     public function create(){
