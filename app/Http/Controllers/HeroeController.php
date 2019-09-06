@@ -40,7 +40,7 @@ class HeroeController extends Controller
         // 'file' => 'image|max:500000',
 
         $rules = array(
-            'file' => 'mimes:mp4|max:10000'
+            'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv|max:10000'
         );
    
 
