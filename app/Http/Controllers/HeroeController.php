@@ -35,37 +35,66 @@ class HeroeController extends Controller
     public function uploadFiles(Request $request) {
 
         //dd('hola');
+        //dump($request->file());
+        //dump($request);
+        //dump($request->all());
+        
+        // dump($request->get('dzuuid'));
+        // dump($request->get('dzchunkindex'));   //17
+        // dump($request->get('dztotalfilesize')); //8.545.557
+        // dump($request->get('dzchunksize'));  //1.000.000
+        // dump($request->get('dztotalchunkcount'));   //9
+        // dump($request->get('dzchunkbyteoffset')); // 8500000
+        
+        
 
         $input = Input::all();
+
+        //dump($request->input('dzuuid')!=null);
+
+
+
+
+
+        //if (chunk)
+
+        //dump($input);
 
         //return collect([1,2,3,4]);
         //dd($input->acceptedFiles);
 
         //$request->get('acceptedFiles');
         //dd(json_encode($request));
-        //dump($request->file());
+       
         // 'file' => 'image|max:500000',
 
         $rules = array(
-            'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv,png|max:10000'
+            'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv,png|max:1000000'
         );
    
-        $validation = Validator::make($input, $rules);
- 
+
+
+
+        $validation = Validator::make($input, $rules);        
+        //dump($validation->fails());
         if ($validation->fails()) {
             return Response::make($validation->errors()->first(), 400);
         }
  
+
+
         $destinationPath = 'uploads'; // upload path
         $extension = Input::file('file')->getClientOriginalExtension(); // getting file extension
         $fileName = rand(11111, 99999) . '.' . $extension; // renameing image
         $upload_success = Input::file('file')->move($destinationPath, $fileName); // uploading file to given path
  
         if ($upload_success) {
-            return Response::json('success', 200);
-        } else {
-            return Response::json('error', 400);
-        }
+             return Response::json('success', 200);
+         } else {
+             return Response::json('error', 400);
+         }
+
+
     }
 
 

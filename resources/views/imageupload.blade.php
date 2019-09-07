@@ -40,16 +40,16 @@
      {
 
 
-
-
-
-
-
-
-
-
-
-        maxFilesize: 500,
+        paramName: 'file',
+        chunking: true,
+        chunkSize: 1000000, // bytes
+        retryChunks: true,
+        retryChunksLimit: 3,
+        maxFilesize: 10, // megabytes    
+        //forceChunking: true,
+        //url: '/upload',
+    
+     
         renameFile: function(file) {
             var dt = new Date();
             var time = dt.getTime();
@@ -58,14 +58,22 @@
         acceptedFiles: ".mp4,.png",
         addRemoveLinks: true,
         timeout: 5000,
-        success: function(file, response) 
-        {
-            console.log(response);
-        },
-        error: function(file, response)
-        {
-           return false;
+
+        chunksUploaded: function(file, done) {
+        done();
         }
+
+        // success: function(file, response) 
+        // {
+        //     console.log(response);
+        // },
+        // error: function(file, response)
+        // {
+        //    return false;
+        // }
+
+
+
     };
 </script>
 
