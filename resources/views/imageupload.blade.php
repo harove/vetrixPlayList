@@ -38,13 +38,24 @@
 <script type="text/javascript">
     Dropzone.options.dropzone =
      {
+
+
+
+
+
+
+
+
+
+
+
         maxFilesize: 500,
         renameFile: function(file) {
             var dt = new Date();
             var time = dt.getTime();
            return time+file.name;
         },
-        acceptedFiles: ".mp4",
+        acceptedFiles: ".mp4,.png",
         addRemoveLinks: true,
         timeout: 5000,
         success: function(file, response) 

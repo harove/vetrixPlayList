@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
 
 
+// use Illuminate\Support\Facades\Request for Request::input('name')        
+
 
 
 
@@ -30,20 +32,24 @@ class HeroeController extends Controller
 
 
 
-    public function uploadFiles() {
+    public function uploadFiles(Request $request) {
 
         //dd('hola');
+
         $input = Input::all();
 
-        //var_dump($input);
+        //return collect([1,2,3,4]);
+        //dd($input->acceptedFiles);
 
+        //$request->get('acceptedFiles');
+        //dd(json_encode($request));
+        //dump($request->file());
         // 'file' => 'image|max:500000',
 
         $rules = array(
-            'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv|max:10000'
+            'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv,png|max:10000'
         );
    
-
         $validation = Validator::make($input, $rules);
  
         if ($validation->fails()) {
