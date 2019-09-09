@@ -45,7 +45,7 @@
         chunkSize: 1000000, // bytes
         retryChunks: true,
         retryChunksLimit: 3,
-        maxFilesize: 10, // megabytes    
+        maxFilesize: 100, // megabytes    
         //forceChunking: true,
         //url: '/upload',
     
@@ -55,7 +55,7 @@
             var time = dt.getTime();
            return time+file.name;
         },
-        acceptedFiles: ".mp4,.png",
+        acceptedFiles: ".mp4",
         addRemoveLinks: true,
         timeout: 5000,
 
